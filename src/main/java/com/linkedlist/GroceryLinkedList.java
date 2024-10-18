@@ -1,3 +1,14 @@
+/*
+ * Coder - Allison Hart 
+ * Date 10/17/2024
+ * Description - single linked list - each foodnode contains a food name
+ * andreference to the next node
+ * This class allows for node to be added, searched, and removed
+ * and seeing if a list is empty or at the end
+ * 
+ */
+
+
 package com.linkedlist;
 
 public class GroceryLinkedList {
@@ -29,6 +40,9 @@ public void print(){
 
 }
 
+//inserts node at a specific index in linked list
+//if index is 0 the node is inserted at the start using insertAtStart method
+//prints error message if out of bounds
 void insert(int index, FoodNode node){
     //FoodNode at indicated index
     if(index == 0) {
@@ -58,6 +72,10 @@ void insert(int index, FoodNode node){
 
 }
 
+
+//inserts a node after specified food item in list
+//uses find method to locate index of node with food
+//prints message if food is not found
 void insert(String food, FoodNode node){
     // insert a food after another specified food
     int index = find(food);
@@ -72,7 +90,7 @@ void insert(String food, FoodNode node){
 
 
 
-
+// insterts a node at the start/beginning of linked list
 void insertAtStart(FoodNode node){
     // FoodNode at start of list - prepend
 
@@ -81,8 +99,11 @@ void insertAtStart(FoodNode node){
 
 }
 
+//insterts a node at the end of the linked list
+//if list is empty the new node becomes the head
+
 void insertAtEnd(FoodNode node){
-     // FoodNode at the en of the list
+     // FoodNode at the end of the list
     if(isEmpty()){
         head = node;
     } else{
@@ -96,11 +117,15 @@ void insertAtEnd(FoodNode node){
 
 }
 
+//checks if list is empty
+//returns true if head is null, returns false if not
 public boolean isEmpty() {
     return head == null;
 }
     //return whether list is empty
 
+
+    //finds the index of a node with the specified food item in list
     public int find (String food)
     {
         FoodNode current = head;
@@ -117,7 +142,9 @@ public boolean isEmpty() {
         return -1;
     }
 
-
+//removes a node witht the specified food item from list
+//if list is empty a message is printed, if the head contains the specified food it updates to the next node
+//if the food is found it removes th enode by updating the next pointer and prev node to skip over the removed node
 void remove(String food){
     //remove the specified food
     if(isEmpty()){

@@ -1,3 +1,10 @@
+/*
+ * Coder - Allison Hart 
+ * Date 10/17/2024
+ * Description - Class holds getters and setters for FoodName and NextFood
+ * 
+ */
+
 package com.linkedlist;
 
 public class FoodNode {
